@@ -1,7 +1,16 @@
+@import 'reset';
+
+// @import 'fonts';
 @import 'utils';
-@import 'fonts';
 @import 'typography';
+@import 'blocks/container';
+@import 'blocks/section';
+@import 'blocks/title';
+@import 'blocks/promo';
 
 body {
-  background: $c-gray;
+  font-family: $main-font;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
 }

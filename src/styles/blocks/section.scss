@@ -1,0 +1,11 @@
+.section {
+  padding-block: 50px;
+
+  @include on-tablet {
+    // padding-block: 44px;
+  }
+
+  @include on-desktop {
+    padding-block: 100px;
+  }
+}
