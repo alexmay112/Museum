@@ -14,14 +14,36 @@
   <link rel="stylesheet" href="src/styles/main.scss" />
 </head>
 
-<body>
-  <aside class="menu"></aside>
+<body class="page">
+  <aside class="menu page__menu" id="menu">
+    <div class="container">
+      <div class="menu__top">
+        <a href="#" class="icon icon--cross"></a>
+      </div>
+      <div class="menu__bottom"></div>
+    </div>
+  </aside>
 
   <main class="main">
     <section class="section promo">
       <div class="container">
         <div class="promo__content">
+          <div class="top-bar promo__top-bar">
+            <a href="#menu" class="icon icon--menu">
+            </a>
+            <a href="#" class="top-bar__logo">
+              <img src="src/images/logo.svg" alt="logo">
+            </a>
+          </div>
           <h2 class="title promo__title">Художній музей</h2>
+          <a class="button promo__button" href="#">
+            <span class="button__text">КВИТКИ</span>
+            <span class="button__square"></span>
+          </a>
+          <picture class="promo__photo">
+            <source type="image/webp" srcset="./src/images/build.webp">
+            <img src="./src/images/build.jpg" alt="">
+          </picture>
         </div>
       </div>
     </section>

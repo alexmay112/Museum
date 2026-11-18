@@ -1,0 +1,28 @@
+.button {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  border: 1px solid $main-accent-color;
+  color: $title-color;
+  text-decoration: none;
+  line-height: 1;
+  font-weight: 500;
+  transition: all $effect-duration;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 5px #ddd;
+  }
+
+  &__text {
+    padding: 16px;
+    text-align: center;
+  }
+
+  &__square {
+    background-color: $main-accent-color;
+    background-image: url(../images/icon-right-gray.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: auto;
+  }
+}

@@ -1,0 +1,14 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-size: contain;
+
+  &--menu {
+    background-image: url(../images/icon-menu.svg);
+  }
+
+  &--cross {
+    background-image: url(../images/icon-cross.svg);
+  }
+}
