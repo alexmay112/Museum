@@ -2,7 +2,9 @@
   width: 24px;
   height: 24px;
   display: block;
+  flex-shrink: 0;
   background-size: contain;
+  background-repeat: no-repeat;
 
   &--menu {
     background-image: url(../images/icon-menu.svg);

@@ -12,6 +12,8 @@
 @import 'blocks/promo';
 @import 'blocks/top-bar';
 @import 'blocks/button';
+@import 'blocks/nav';
+@import 'blocks/schedule';
 
 body {
   font-family: $main-font;
@@ -19,4 +21,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $title-color;
+  text-wrap: pretty;
+  scroll-behavior: smooth;
 }

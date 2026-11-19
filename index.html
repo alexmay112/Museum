@@ -4,23 +4,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="src/images/logo.svg" type="image/x-icon">
+  <link rel="icon" href="src/images/logo.svg" type="image/x-icon" />
   <title>Художній музей</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <link rel="stylesheet" href="src/styles/main.scss" />
 </head>
 
 <body class="page">
   <aside class="menu page__menu" id="menu">
-    <div class="container">
-      <div class="menu__top">
-        <a href="#" class="icon icon--cross"></a>
+    <div class="menu__inner">
+      <div class="container menu__container">
+        <div class="menu__top">
+          <a href="#" class="icon icon--cross"></a>
+          <div class="nav menu__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Галерея
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Про Нас
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Виставки та події
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">
+                  Контакти
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="menu__bottom">
+          <div class="schedule menu__schedule">
+            <p class="schedule__title">Графік роботи</p>
+            <ul class="schedule__list">
+              <li class="schedule__item">
+                <strong>12:00 — 20:00</strong>
+                середа
+              </li>
+              <li class="schedule__item">
+                <strong>12:00 — 20:00</strong>
+                четвер
+              </li>
+              <li class="schedule__item">
+                <strong>12:00 — 20:00</strong>
+                п’ятниця
+              </li>
+              <li class="schedule__item">
+                <strong>11:00 — 19:00</strong>
+                субота
+              </li>
+              <li class="schedule__item">
+                <strong>11:00 — 19:00</strong>
+                неділя
+              </li>
+            </ul>
+            <p class="schedule__holidays">
+              <strong>Вихідні:</strong>
+              понеділок, вівторок Каса припиняє роботу за 1 годину до закриття музею
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="menu__bottom"></div>
     </div>
   </aside>
 
@@ -29,10 +85,9 @@
       <div class="container">
         <div class="promo__content">
           <div class="top-bar promo__top-bar">
-            <a href="#menu" class="icon icon--menu">
-            </a>
+            <a href="#menu" class="icon icon--menu"></a>
             <a href="#" class="top-bar__logo">
-              <img src="src/images/logo.svg" alt="logo">
+              <img src="src/images/logo.svg" alt="logo" />
             </a>
           </div>
           <h2 class="title promo__title">Художній музей</h2>
@@ -41,8 +96,8 @@
             <span class="button__square"></span>
           </a>
           <picture class="promo__photo">
-            <source type="image/webp" srcset="./src/images/build.webp">
-            <img src="./src/images/build.jpg" alt="">
+            <source type="image/webp" srcset="./src/images/build.webp" />
+            <img src="./src/images/build.jpg" alt="" />
           </picture>
         </div>
       </div>

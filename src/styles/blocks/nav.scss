@@ -1,0 +1,45 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 28px;
+  }
+
+  &__item {
+    width: calc((100% - 28px) / 2);
+  }
+
+  &__link {
+    max-width: fit-content;
+    padding-bottom: 5px;
+    line-height: 1;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+
+    @include on-desktop {
+      font-size: 22px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      background-color: #fff;
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

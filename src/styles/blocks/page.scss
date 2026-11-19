@@ -10,7 +10,7 @@
     right: 0;
     opacity: 0;
     transition: all $effect-duration;
-    transform: translate(-100%);
+    transform: translateY(-100%);
     pointer-events: none;
     z-index: 5;
 
