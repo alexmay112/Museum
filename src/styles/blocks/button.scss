@@ -1,12 +1,21 @@
 .button {
-  display: grid;
-  grid-template-columns: 1fr 50px;
+  // display: grid;
+  // grid-template-columns: 1fr 50px;
+  height: 50px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
   border: 1px solid $main-accent-color;
   color: $title-color;
   text-decoration: none;
   line-height: 1;
   font-weight: 500;
   transition: all $effect-duration;
+
+  @include on-tablet {
+    height: 70px;
+    align-items: center;
+  }
 
   &:hover {
     transform: translateY(-4px);
@@ -15,10 +24,14 @@
 
   &__text {
     padding: 16px;
+    flex-grow: 1;
     text-align: center;
   }
 
   &__square {
+    height: 100%;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
     background-color: $main-accent-color;
     background-image: url(../images/icon-right-gray.svg);
     background-repeat: no-repeat;
