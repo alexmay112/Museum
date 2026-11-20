@@ -1,0 +1,36 @@
+.to-section {
+  display: none;
+
+  @include on-desktop {
+    padding-left: 90px;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: 1;
+    font-weight: 700;
+    color: $text-color-muted;
+    text-transform: uppercase;
+    transform: rotate(-90deg) translateX(-16px);
+    transform-origin: left top;
+    transition: transform $effect-duration;
+  }
+
+  &:hover {
+    @include on-desktop {
+      transform: rotate(-90deg) translateX(-12px);
+    }
+  }
+
+  &::before {
+    @include on-desktop {
+      width: 70px;
+      height: 1px;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background-color: $main-accent-color;
+    }
+  }
+}

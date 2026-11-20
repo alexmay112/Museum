@@ -3,7 +3,8 @@
 
   &__content {
     @include page-grid;
-
+    
+    grid-template-rows: auto auto 1fr;
     align-items: start;
     position: relative;
   }
@@ -18,13 +19,11 @@
       margin-top: 15px;
       margin-bottom: 40px;
       grid-column: 1/6;
-
+      grid-row: 1/1;
       display: grid;
       gap: 30px;
       grid-template-columns: repeat(5, 1fr);
-
       position: static;
-      z-index: 5;
     }
 
     @include on-desktop {
@@ -100,7 +99,7 @@
       margin: 0;
       aspect-ratio: 374/384;
       grid-column: 4/-1;
-      position: absolute;
+      grid-row: 1/4;
       background-size: 126% auto;
     }
 
@@ -108,6 +107,7 @@
       width: calc(100% + 55px);
       grid-column: 6/-1;
       aspect-ratio: 725/655;
+      background-size: 100% auto;
     }
   }
 }
