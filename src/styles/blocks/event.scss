@@ -1,27 +1,24 @@
 .event {
-  // grid-column: span 2;
 
   @include page-grid;
 
-  grid-template: auto auto / auto;
-  grid-template-areas:
-    'pic'
-    'cont';
   row-gap: 16px;
 
   @include on-tablet {
-    // grid-column: span 6;
+    row-gap: 40px;
   }
 
   @include on-desktop {
-    grid-template: auto / auto auto;
-    grid-template-areas: 'pic cont';
     align-items: center;
   }
 
   &__picture {
     width: 100%;
-    grid-area: pic;
+    grid-column: 1/-1;
+
+    @include on-desktop {
+      grid-column: 1/8;
+    }
 
     img {
       width: 100%;
@@ -29,14 +26,26 @@
   }
 
   &__content {
-    grid-area: cont;
+    grid-column: 1/-1;
     background-color: #fff;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 9/-1;
+    }
   }
 
   &__head {
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
   }
 
   &__type {
@@ -52,20 +61,36 @@
   &__title {
     margin-bottom: 10px;
     font-family: $title-font;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+
+    @include on-tablet {
+      margin-bottom: 15px;
+    }
 
     &--marked {
       &::after {
         content: '';
         display: inline-block;
-        width: 14px;
-        height: 14px;
-        margin-left: 16px;
+        width: 10px;
+        height: 10px;
+        margin-left: 10px;
+        vertical-align: middle;
         background: $second-accent-color;
+
+        @include on-tablet {
+          width: 15px;
+          height: 15px;
+          margin-left: 15px;
+        }
+
+        @include on-desktop {
+          margin-left: 20px;
+        }
       }
     }
   }
-
-  // &__text {}
 
   &--wide {
     margin-inline: -$container-padding-inline;
@@ -73,13 +98,13 @@
     gap: 0;
 
     @include on-tablet {
-      margin-inline: -$container-padding-inline-tablet;
-      grid-template: repeat(4, auto) / $container-padding-inline-tablet auto $container-padding-inline-tablet;
+      margin-inline: 0;
+      grid-template: repeat(4, auto) / 65px auto 65px;
     }
 
     @include on-desktop {
       margin-inline: -$container-padding-inline-desktop;
-      grid-template: repeat(4, auto) / $container-padding-inline-desktop auto $container-padding-inline-desktop;
+      grid-template: repeat(4, auto) / 355px auto 355px;
     }
 
     .event__picture {
@@ -89,15 +114,28 @@
 
     .event__content {
       height: 100%;
-      padding: 15px;
+      padding: 20px 15px;
       grid-row: -3/-1;
       grid-column: 2/-2;
-      border-bottom: 1px solid #c6d6d2;
+      border-bottom: 2px solid #c6d6d2;
+
+      @include on-tablet {
+        padding: 50px 55px;
+      }
+
+      @include on-desktop {
+        padding: 50px 100px;
+      }
     }
 
     .event__title {
       margin: 0;
       font-weight: 400;
+      text-align: center;
+
+      @include on-tablet {
+        text-align: left;
+      }
     }
   }
 }
