@@ -1,40 +1,56 @@
 .event {
-  display: grid;
+  // grid-column: span 2;
+
+  @include page-grid;
+
+  grid-template: auto auto / auto;
   grid-template-areas:
-    'pic .  '
-    'pic head'
-    'pic title'
-    'pic text'
-    'pic .  ';
-  grid-template-rows: 1fr auto auto auto 1fr / auto auto;
-  column-gap: 130px;
-  align-items: center;
+    'pic'
+    'cont';
+  row-gap: 16px;
+
+  @include on-tablet {
+    // grid-column: span 6;
+  }
+
+  @include on-desktop {
+    grid-template: auto / auto auto;
+    grid-template-areas: 'pic cont';
+    align-items: center;
+  }
 
   &__picture {
-    grid-area: pic;
     width: 100%;
+    grid-area: pic;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    grid-area: cont;
+    background-color: #fff;
   }
 
   &__head {
-    grid-area: head;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
   }
 
   &__type {
-    grid-area: type;
     font-weight: 500;
     color: $text-color-muted;
   }
 
   &__date {
-    grid-area: date;
     font-weight: 700;
     color: $main-accent-color;
   }
 
   &__title {
-    grid-area: title;
+    margin-bottom: 10px;
     font-family: $title-font;
 
     &--marked {
@@ -49,31 +65,39 @@
     }
   }
 
-  &__text {
-    grid-area: text;
-  }
-
-  .event__type,
-  .event__date,
-  .event__title,
-  .event__text {
-    z-index: 2;
-  }
+  // &__text {}
 
   &--wide {
-    grid-template: 1fr auto auto / 1fr auto auto 1fr;
-    grid-template-areas:
-      'pic   pic   pic   pic'
-      '.     head  head  .'
-      '.     title title .';
-    column-gap: 0;
-  }
+    margin-inline: -$container-padding-inline;
+    grid-template: repeat(4, auto) / $container-padding-inline auto $container-padding-inline;
+    gap: 0;
 
-  &--wide::before {
-    content: '';
-    grid-area: 2 / 2 / -1 / 4;
-    background: #fff;
-    border-bottom: 1px solid #c6d6d2;
-    z-index: 1;
+    @include on-tablet {
+      margin-inline: -$container-padding-inline-tablet;
+      grid-template: repeat(4, auto) / $container-padding-inline-tablet auto $container-padding-inline-tablet;
+    }
+
+    @include on-desktop {
+      margin-inline: -$container-padding-inline-desktop;
+      grid-template: repeat(4, auto) / $container-padding-inline-desktop auto $container-padding-inline-desktop;
+    }
+
+    .event__picture {
+      grid-row: 1/-2;
+      grid-column: 1/-1;
+    }
+
+    .event__content {
+      height: 100%;
+      padding: 15px;
+      grid-row: -3/-1;
+      grid-column: 2/-2;
+      border-bottom: 1px solid #c6d6d2;
+    }
+
+    .event__title {
+      margin: 0;
+      font-weight: 400;
+    }
   }
 }

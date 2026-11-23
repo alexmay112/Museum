@@ -4,4 +4,8 @@
   font-size: 36px;
   font-family: $title-font;
   line-height: 1;
+
+  @include on-tablet {
+    text-align: left;
+  }
 }

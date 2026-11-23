@@ -1,6 +1,11 @@
 .events {
-  display: grid;
-  gap: 104px;
-
   // &__title {}
+
+  &__content {
+    display: grid;
+
+    // @include page-grid;
+
+    row-gap: 60px;
+  }
 }
