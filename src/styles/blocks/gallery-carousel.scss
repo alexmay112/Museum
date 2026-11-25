@@ -1,0 +1,96 @@
+.gallery-carousel {
+  padding-bottom: 30px;
+  overflow: visible;
+
+  @include on-desktop {
+    padding: 0;
+  }
+
+  &__wrapper {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 600px 360px;
+      gap: 30px;
+    }
+  }
+
+  .swiper-pagination {
+    top: auto;
+    bottom: 0;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0 11px !important;
+    opacity: 1;
+    background: #e0e0e0;
+
+    &-active {
+      background: $main-accent-color;
+    }
+  }
+
+  &__picture {
+    height: 100%;
+
+    img {
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  &__slide {
+    height: auto;
+
+    &--1 {
+      @include on-desktop {
+        grid-column: 1/5;
+      }
+    }
+
+    &--2 {
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--3 {
+      @include on-desktop {
+        grid-column: 5/-1;
+      }
+    }
+
+    &--4 {
+      @include on-desktop {
+        grid-column: 1/9;
+      }
+
+      img {
+        @include on-desktop {
+          object-position: center left;
+        }
+      }
+    }
+
+    &--5 {
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &--6 {
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+}
