@@ -18,6 +18,10 @@
 @import 'blocks/events';
 @import 'blocks/event';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $main-font;
   font-weight: 300;
@@ -25,5 +29,4 @@ body {
   line-height: 1.5;
   color: $title-color;
   text-wrap: pretty;
-  scroll-behavior: smooth;
 }
